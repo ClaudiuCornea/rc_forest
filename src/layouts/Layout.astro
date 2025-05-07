@@ -1,13 +1,18 @@
+---
+import './src/styles/global.css'
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>RC Forest</title>
+		<script is:inline src="../node_modules/flyonui/flyonui.js"></script>
 	</head>
-	<body>
+	<body class="relative">
 		<slot />
 	</body>
 </html>
@@ -16,6 +21,7 @@
 	html,
 	body {
 		margin: 0;
+		padding: 0;
 		width: 100%;
 		height: 100%;
 	}

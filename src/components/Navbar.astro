@@ -1,0 +1,14 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+---
+
+<nav class="navbar rounded-box justify-between gap-4 shadow-base-300/20 shadow-sm fixed top-0 right-0 left-0 z-50">
+  <div class="navbar-start" />
+  <div class="navbar-center flex items-center">
+    <a href="#" aria-label="Homepage Link">
+      <Image src={logo} alt="Logo RC Forest" class="w-10" />
+    </a>
+  </div>
+  <div class="navbar-end" />
+</nav>
