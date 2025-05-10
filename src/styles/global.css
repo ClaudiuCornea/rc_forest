@@ -2,3 +2,4 @@
 @plugin "flyonui";
 @import "flyonui/variants.css";
 @source "../node_modules/flyonui/flyonui.js";
+@import "flyonui/src/vendor/fullcalendar.css";
