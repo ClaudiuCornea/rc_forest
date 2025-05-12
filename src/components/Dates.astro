@@ -4,20 +4,30 @@
     </div>
 </div>
 <script>
-    const calendarDefaultExample = document.getElementById('calendar')
-    const eventDay = new Date()
-    const calendarDefault = new FullCalendar.Calendar(calendarDefaultExample, {
-        initialView: 'dayGridMonth',
-        buttonText: {
-        today: 'Today'
-        },
-        events: [
-        {
-            title: 'Learn JavaScript',
-            start: eventDay.toISOString().split('T')[0],
-            classNames: ['fc-event-primary']
+    import { Calendar } from '@fullcalendar/core';
+    import dayGridPlugin from '@fullcalendar/daygrid';
+    import timeGridPlugin from '@fullcalendar/timegrid';
+    import listPlugin from '@fullcalendar/list';
+
+    document.addEventListener('DOMContentLoaded', function() {
+        let calendarEl = document.getElementById('calendar');
+        if (calendarEl) {
+            let eventDay = new Date();
+            let calendar = new Calendar(calendarEl, {
+                plugins: [ dayGridPlugin, timeGridPlugin, listPlugin ],
+                initialView: 'dayGridMonth',
+                buttonText: {
+                today: 'Today'
+                },
+                events: [
+                {
+                    title: 'Learn JavaScript',
+                    start: eventDay.toISOString().split('T')[0],
+                    classNames: ['fc-event-primary']
+                }
+                ]
+            });
+            calendar.render();
         }
-        ]
-    })
-    calendarDefault.render()
+    });
 </script>
