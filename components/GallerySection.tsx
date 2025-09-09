@@ -74,19 +74,6 @@ const GallerySection: React.FC = () => {
     ? galleryImages 
     : galleryImages.filter(img => img.category === filter);
 
-  const getImageHeight = (size: string) => {
-    switch (size) {
-      case 'small':
-        return 'h-48';
-      case 'medium':
-        return 'h-64';
-      case 'large':
-        return 'h-80';
-      default:
-        return 'h-64';
-    }
-  };
-
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'Team Celebration':

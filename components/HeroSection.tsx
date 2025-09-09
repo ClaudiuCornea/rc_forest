@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { TrophyIcon, LifebuoyIcon } from '@heroicons/react/24/outline';
+import { LifebuoyIcon } from '@heroicons/react/24/outline';
 
 const HeroSection: React.FC = () => {
   return (

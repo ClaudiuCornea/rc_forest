@@ -129,14 +129,14 @@
 }
 
 @utility hero-text {
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   letter-spacing: 0.05em;
   line-height: 0.9;
 }
 
 @utility section-heading {
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.1;
