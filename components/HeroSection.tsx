@@ -1,18 +1,19 @@
 "use client"
 import React from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { LifebuoyIcon } from '@heroicons/react/24/outline';
 
 const HeroSection: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1574602904316-f84f62477265?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxydWdieSUyMHRlYW0lMjBjZWxlYnJhdGlvbiUyMHZpY3RvcnklMjB0cm9waHl8ZW58MHwwfHx8MTc1NTM1NjYwMnww&ixlib=rb-4.1.0&q=85"
-          alt="Rugby team dancing in the field - Stefan Lehner on Unsplash"
-          className="w-full h-full object-cover"
-          style={{ width: '100%', height: '100%' }}
+        <Image
+          src="/team.JPG"
+          alt="Rugby team RC Forest"
+          fill
+          className="object-cover"
+          priority
         />
         <div className="absolute inset-0 gradient-red-black opacity-80"></div>
       </div>
@@ -22,7 +23,13 @@ const HeroSection: React.FC = () => {
         {/* Logo/Icon */}
         <div className="mb-8 flex justify-center">
           <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 border border-white/30">
-            <LifebuoyIcon className="w-16 h-16 text-white" />
+            <Image
+              src="/logo.png"
+              alt="RC Forest logo"
+              width={64} height={64}
+              className="w-16 h-16"
+              priority
+            />
           </div>
         </div>
 

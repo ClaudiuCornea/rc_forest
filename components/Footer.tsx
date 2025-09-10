@@ -1,7 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
-import { 
-  LifebuoyIcon,
+import {
   MapPinIcon,
   PhoneIcon,
   EnvelopeIcon
@@ -16,7 +16,13 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="bg-rugby-red p-3 rounded-lg">
-                <LifebuoyIcon className="w-8 h-8 text-white" />
+                <Image
+                  src="/logo.png"
+                  alt="RC Forest logo"
+                  width={32} height={32}
+                  className="w-8 h-8"
+                  priority
+                />
               </div>
               <div>
                 <h3 className="section-heading text-2xl">RC FOREST</h3>

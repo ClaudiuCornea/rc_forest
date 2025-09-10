@@ -74,8 +74,8 @@ const AboutSection: React.FC = () => {
           {/* Image */}
           <div className="relative">
               <Image
-                src="https://images.unsplash.com/photo-1652107948839-38313b628dae?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw2fHxydWdieSUyMHRlYW0lMjBjZWxlYnJhdGlvbiUyMHZpY3RvcnklMjB0cm9waHl8ZW58MHwwfHx8MTc1NTM1NjYwMnww&ixlib=rb-4.1.0&q=85"
-                alt="A group of men in sports uniforms - Andrea Qoqonga on Unsplash"
+                src="/togheter.jpg"
+                alt="A group of men in sports uniforms"
                 width={800}
                 height={384}
                 className="w-full h-96 object-cover hover-lift"
