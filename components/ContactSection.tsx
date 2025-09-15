@@ -149,7 +149,7 @@ const ContactSection: React.FC = () => {
           <div>
             <Card className="bg-white border-0 shadow-xl">
               <CardHeader>
-                <CardTitle className="section-heading text-3xl text-rugby-black">
+                <CardTitle className="section-heading text-3xl text-rugby-black pt-8">
                   Send us a Message
                 </CardTitle>
               </CardHeader>

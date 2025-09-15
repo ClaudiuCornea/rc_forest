@@ -218,7 +218,7 @@ const FixturesSection: React.FC = () => {
         <div className="mt-16">
           <Card className="bg-gradient-to-r from-rugby-red to-rugby-red-dark text-white border-0">
             <CardHeader>
-              <CardTitle className="section-heading text-3xl text-center">NEXT MATCH</CardTitle>
+              <CardTitle className="section-heading text-3xl text-center pt-8">NEXT MATCH</CardTitle>
             </CardHeader>
             <CardContent className="text-center pb-8">
               <h3 className="hero-text text-4xl mb-4">RC FOREST vs WAER SEN MEN 1</h3>

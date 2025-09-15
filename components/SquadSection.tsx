@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import Image from 'next/image';
 
 interface Player {
   id: number;
@@ -13,11 +14,6 @@ interface Player {
   height: string;
   weight: string;
   avatar: string;
-  stats: {
-    matches: number;
-    tries: number;
-    points: number;
-  };
 }
 
 const players: Player[] = [
@@ -29,8 +25,7 @@ const players: Player[] = [
     age: 28,
     height: "6'1\"",
     weight: "185 lbs",
-    avatar: "https://i.pravatar.cc/150?img=1",
-    stats: { matches: 45, tries: 23, points: 156 }
+    avatar: "./Jason.png"
   },
   {
     id: 2,
@@ -40,8 +35,7 @@ const players: Player[] = [
     age: 26,
     height: "6'3\"",
     weight: "220 lbs",
-    avatar: "https://i.pravatar.cc/150?img=2",
-    stats: { matches: 38, tries: 8, points: 40 }
+    avatar: "./Jason.png"
   },
   {
     id: 3,
@@ -51,8 +45,7 @@ const players: Player[] = [
     age: 24,
     height: "6'5\"",
     weight: "210 lbs",
-    avatar: "https://i.pravatar.cc/150?img=3",
-    stats: { matches: 32, tries: 12, points: 60 }
+    avatar: "./Jason.png"
   },
   {
     id: 4,
@@ -62,8 +55,7 @@ const players: Player[] = [
     age: 25,
     height: "5'9\"",
     weight: "165 lbs",
-    avatar: "https://i.pravatar.cc/150?img=4",
-    stats: { matches: 41, tries: 18, points: 90 }
+    avatar: "./Jason.png"
   },
   {
     id: 5,
@@ -73,8 +65,7 @@ const players: Player[] = [
     age: 23,
     height: "5'11\"",
     weight: "175 lbs",
-    avatar: "https://i.pravatar.cc/150?img=5",
-    stats: { matches: 29, tries: 25, points: 125 }
+    avatar: "./Jason.png"
   },
   {
     id: 6,
@@ -84,8 +75,7 @@ const players: Player[] = [
     age: 27,
     height: "6'0\"",
     weight: "180 lbs",
-    avatar: "https://i.pravatar.cc/150?img=6",
-    stats: { matches: 43, tries: 15, points: 98 }
+    avatar: "./Jason.png"
   }
 ];
 
@@ -116,7 +106,7 @@ const SquadSection: React.FC = () => {
               <CardContent className="p-6">
                 {/* Player Header */}
                 <div className="flex items-center gap-4 mb-4">
-                  <Avatar className="w-16 h-16">
+                  <Avatar className="w-32 h-32">
                     <AvatarImage src={player.avatar} alt={player.name} />
                     <AvatarFallback className="bg-rugby-red text-white">
                       {player.name.split(' ').map(n => n[0]).join('')}
@@ -134,24 +124,17 @@ const SquadSection: React.FC = () => {
                 {/* Player Stats */}
                 <div className="grid grid-cols-3 gap-4 mb-4">
                   <div className="text-center">
-                    <div className="hero-text text-2xl text-rugby-red">{player.stats.matches}</div>
-                    <div className="body-text text-xs text-gray-500">Matches</div>
+                    <div className="hero-text text-2xl text-rugby-red">{player.age}</div>
+                    <div className="body-text text-xs text-gray-500">Age</div>
                   </div>
                   <div className="text-center">
-                    <div className="hero-text text-2xl text-rugby-red">{player.stats.tries}</div>
-                    <div className="body-text text-xs text-gray-500">Tries</div>
+                    <div className="hero-text text-2xl text-rugby-red">{player.height}</div>
+                    <div className="body-text text-xs text-gray-500">Height</div>
                   </div>
                   <div className="text-center">
-                    <div className="hero-text text-2xl text-rugby-red">{player.stats.points}</div>
-                    <div className="body-text text-xs text-gray-500">Points</div>
+                    <div className="hero-text text-2xl text-rugby-red">{player.weight}</div>
+                    <div className="body-text text-xs text-gray-500">Weight</div>
                   </div>
-                </div>
-
-                {/* Physical Stats */}
-                <div className="flex justify-between text-sm text-gray-600 border-t pt-4">
-                  <span>Age: {player.age}</span>
-                  <span>{player.height}</span>
-                  <span>{player.weight}</span>
                 </div>
               </CardContent>
             </Card>
@@ -160,11 +143,12 @@ const SquadSection: React.FC = () => {
 
         {/* Team Photo */}
         <div className="relative rounded-2xl overflow-hidden">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1486206137976-8a754c7b9cf1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw4fHxydWdieSUyMHRlYW0lMjBjZWxlYnJhdGlvbiUyMHZpY3RvcnklMjB0cm9waHl8ZW58MHwwfHx8MTc1NTM1NjYwMnww&ixlib=rb-4.1.0&q=85"
             alt="Grayscale photography of men playing rugby on muddy land - Quino Al on Unsplash"
+            width={1920}
+            height={384}
             className="w-full h-64 md:h-96 object-cover"
-            style={{ width: '100%', height: '384px' }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-rugby-black/80 to-transparent"></div>
           <div className="absolute bottom-8 left-8 text-white">
@@ -182,7 +166,7 @@ const SquadSection: React.FC = () => {
             <Card className="bg-white max-w-md w-full" onClick={(e) => e.stopPropagation()}>
               <CardContent className="p-6">
                 <div className="text-center mb-4">
-                  <Avatar className="w-24 h-24 mx-auto mb-4">
+                  <Avatar className="w-56 h-56 mx-auto mb-4">
                     <AvatarImage src={selectedPlayer.avatar} alt={selectedPlayer.name} />
                     <AvatarFallback className="bg-rugby-red text-white text-xl">
                       {selectedPlayer.name.split(' ').map(n => n[0]).join('')}
@@ -194,7 +178,7 @@ const SquadSection: React.FC = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4 text-center">
+                  <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
                       <div className="body-text-semibold text-rugby-black">Age</div>
                       <div className="body-text text-gray-600">{selectedPlayer.age}</div>
@@ -203,20 +187,9 @@ const SquadSection: React.FC = () => {
                       <div className="body-text-semibold text-rugby-black">Height</div>
                       <div className="body-text text-gray-600">{selectedPlayer.height}</div>
                     </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-3 gap-4 text-center border-t pt-4">
                     <div>
-                      <div className="hero-text text-2xl text-rugby-red">{selectedPlayer.stats.matches}</div>
-                      <div className="body-text text-sm text-gray-500">Matches</div>
-                    </div>
-                    <div>
-                      <div className="hero-text text-2xl text-rugby-red">{selectedPlayer.stats.tries}</div>
-                      <div className="body-text text-sm text-gray-500">Tries</div>
-                    </div>
-                    <div>
-                      <div className="hero-text text-2xl text-rugby-red">{selectedPlayer.stats.points}</div>
-                      <div className="body-text text-sm text-gray-500">Points</div>
+                      <div className="body-text-semibold text-rugby-black">Weight</div>
+                      <div className="body-text text-gray-600">{selectedPlayer.weight}</div>
                     </div>
                   </div>
                 </div>
