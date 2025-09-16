@@ -6,7 +6,6 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import Image from 'next/image';
 
 interface Player {
-  id: number;
   name: string;
   position: string;
   number: number;
@@ -18,65 +17,230 @@ interface Player {
 
 const players: Player[] = [
   {
-    id: 1,
-    name: "James Mitchell",
-    position: "Captain / Fly-half",
-    number: 10,
-    age: 28,
-    height: "6'1\"",
-    weight: "185 lbs",
-    avatar: "./Jason.png"
-  },
-  {
-    id: 2,
-    name: "Marcus Thompson",
+    name: "Dahdouh Karim",
     position: "Prop",
     number: 1,
-    age: 26,
-    height: "6'3\"",
-    weight: "220 lbs",
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
     avatar: "./Jason.png"
   },
   {
-    id: 3,
-    name: "David Wilson",
+    name: "Inal Oghuzhan",
+    position: "Hooker",
+    number: 2,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Renaers Dylan",
+    position: "Prop",
+    number: 3,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Cornea Claudiu",
     position: "Lock",
     number: 4,
-    age: 24,
-    height: "6'5\"",
-    weight: "210 lbs",
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
     avatar: "./Jason.png"
   },
   {
-    id: 4,
-    name: "Ryan O'Connor",
+    name: "Hoffman Warren",
+    position: "Lock",
+    number: 5,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Leleux Nicolas",
+    position: "Captain - Flanker",
+    number: 6,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Cajal Alejandro",
+    position: "Flanker",
+    number: 7,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Trouman Lionel",
+    position: "Number 8",
+    number: 8,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Peeters Antoine",
     position: "Scrum-half",
     number: 9,
-    age: 25,
-    height: "5'9\"",
-    weight: "165 lbs",
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
     avatar: "./Jason.png"
   },
   {
-    id: 5,
-    name: "Alex Rodriguez",
-    position: "Wing",
+    name: "Ruymbeke Eliot",
+    position: "Fly-half",
+    number: 10,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "V. Anton",
+    position: "Left Wing",
     number: 11,
-    age: 23,
-    height: "5'11\"",
-    weight: "175 lbs",
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
     avatar: "./Jason.png"
   },
   {
-    id: 6,
-    name: "Tom Harrison",
+    name: "Barboza Ethan",
+    position: "Inside Center",
+    number: 12,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Etn Florian",
+    position: "Outside Center",
+    number: 13,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Chamorro Ivan",
+    position: "Right Wing",
+    number: 14,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Tabirta Stefan",
     position: "Fullback",
     number: 15,
-    age: 27,
-    height: "6'0\"",
-    weight: "180 lbs",
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
     avatar: "./Jason.png"
-  }
+  },
+  {
+    name: "Kosk Adrian",
+    position: "",
+    number: 16,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Bertinchamps Christophe",
+    position: "",
+    number: 17,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "N. Antonio",
+    position: "",
+    number: 18,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "T. Alexandre",
+    position: "",
+    number: 19,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Chkhikvadze Vano",
+    position: "",
+    number: 20,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Martinez Alex",
+    position: "",
+    number: 21,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Gloaguen Swen",
+    position: "",
+    number: 22,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Mehdi “Baba” Ba",
+    position: "Coach",
+    number: 0,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Patrick",
+    position: "Coach",
+    number: 0,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
+  {
+    name: "Psaroudakis Stelios",
+    position: "Coach",
+    number: 0,
+    age: 18,
+    height: "1.75",
+    weight: "75 kg",
+    avatar: "./Jason.png"
+  },
 ];
 
 const SquadSection: React.FC = () => {
@@ -97,9 +261,9 @@ const SquadSection: React.FC = () => {
 
         {/* Players Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {players.map((player) => (
+          {players.map((player, index) => (
             <Card 
-              key={player.id} 
+              key={index} 
               className="bg-white border-0 shadow-lg hover-lift cursor-pointer transition-all duration-300"
               onClick={() => setSelectedPlayer(player)}
             >
@@ -115,7 +279,7 @@ const SquadSection: React.FC = () => {
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="body-text-bold text-lg text-rugby-black">{player.name}</h3>
-                      <Badge className="bg-rugby-red text-white text-sm">#{player.number}</Badge>
+                      {Boolean(player.number) && <Badge className="bg-rugby-red text-white text-sm">#{player.number}</Badge>}
                     </div>
                     <p className="body-text text-gray-600">{player.position}</p>
                   </div>
@@ -174,7 +338,7 @@ const SquadSection: React.FC = () => {
                   </Avatar>
                   <h3 className="section-heading text-2xl text-rugby-black mb-1">{selectedPlayer.name}</h3>
                   <p className="body-text text-gray-600 mb-2">{selectedPlayer.position}</p>
-                  <Badge className="bg-rugby-red text-white">#{selectedPlayer.number}</Badge>
+                  {Boolean(selectedPlayer.number) && <Badge className="bg-rugby-red text-white">#{selectedPlayer.number}</Badge>}
                 </div>
                 
                 <div className="space-y-4">
