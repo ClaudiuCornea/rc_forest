@@ -23,7 +23,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Karim.png"
   },
   {
     name: "Inal Oghuzhan",
@@ -32,7 +32,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Oguz.png"
   },
   {
     name: "Renaers Dylan",
@@ -41,7 +41,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Vik.png"
   },
   {
     name: "Cornea Claudiu",
@@ -50,7 +50,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Claudiu.png"
   },
   {
     name: "Hoffman Warren",
@@ -59,7 +59,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Warren.png"
   },
   {
     name: "Leleux Nicolas",
@@ -68,7 +68,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Nico.png"
   },
   {
     name: "Cajal Alejandro",
@@ -77,7 +77,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Cajal.png"
   },
   {
     name: "Trouman Lionel",
@@ -86,7 +86,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Lionel.png"
   },
   {
     name: "Peeters Antoine",
@@ -95,7 +95,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Peeters.png"
   },
   {
     name: "Ruymbeke Eliot",
@@ -104,7 +104,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Eliot.png"
   },
   {
     name: "V. Anton",
@@ -113,7 +113,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Anton.png"
   },
   {
     name: "Barboza Ethan",
@@ -122,7 +122,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Ethan.png"
   },
   {
     name: "Etn Florian",
@@ -131,7 +131,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Flo.png"
   },
   {
     name: "Chamorro Ivan",
@@ -140,7 +140,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Ivan.png"
   },
   {
     name: "Tabirta Stefan",
@@ -149,7 +149,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Stephan.png"
   },
   {
     name: "Kosk Adrian",
@@ -158,7 +158,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Adrian.png"
   },
   {
     name: "Bertinchamps Christophe",
@@ -176,7 +176,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Antonio.png"
   },
   {
     name: "T. Alexandre",
@@ -185,7 +185,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Alex.png"
   },
   {
     name: "Chkhikvadze Vano",
@@ -194,7 +194,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Vano.png"
   },
   {
     name: "Martinez Alex",
@@ -203,7 +203,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Alex Marty.png"
   },
   {
     name: "Gloaguen Swen",
@@ -212,7 +212,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Zwen.png"
   },
   {
     name: "Mehdi “Baba” Ba",
@@ -221,7 +221,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Baba.png"
   },
   {
     name: "Patrick",
@@ -230,7 +230,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Patrick.png"
   },
   {
     name: "Psaroudakis Stelios",
@@ -239,7 +239,7 @@ const players: Player[] = [
     age: 18,
     height: "1.75",
     weight: "75 kg",
-    avatar: "./Jason.png"
+    avatar: "./Stelios.png"
   },
 ];
 
