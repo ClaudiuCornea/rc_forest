@@ -181,7 +181,7 @@ const FixturesSection: React.FC = () => {
           <h2 className="section-heading text-5xl md:text-6xl text-rugby-black mb-6">
             FIXTURES & RESULTS
           </h2>
-          <p className="body-text-medium text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="body-text-medium text-xl text-gray-600 max-w-5xl mx-auto">
             Follow our journey through the season
           </p>
         </div>

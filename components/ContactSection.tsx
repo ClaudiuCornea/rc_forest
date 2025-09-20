@@ -42,10 +42,13 @@ const ContactSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="section-heading text-5xl md:text-6xl text-rugby-black mb-6">
-            GET IN TOUCH
+            JOIN US
           </h2>
-          <p className="body-text-medium text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to join the RC Forest family? Contact us today
+          <p className="body-text-medium text-xl text-gray-600 max-w-5xl mx-auto my-6">
+            Do you dream of chasing the ball, feeling the adrenaline of a perfect tackle,
+            or simply sharing unforgettable moments with a passionate team? Then RC Forest Rugby Club is made for you!<br />
+            Whether you are a beginner, an experienced player, or just curious to discover this incredible sport, we welcome you with open arms.<br />
+            Join us to experience the magic of rugby: personal growth, team spirit, and guaranteed laughter!
           </p>
         </div>
 

@@ -99,7 +99,7 @@ const GallerySection: React.FC = () => {
           <h2 className="section-heading text-5xl md:text-6xl text-rugby-black mb-6">
             GALLERY
           </h2>
-          <p className="body-text-medium text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="body-text-medium text-xl text-gray-600 max-w-5xl mx-auto">
             Capturing the moments that define our journey
           </p>
         </div>

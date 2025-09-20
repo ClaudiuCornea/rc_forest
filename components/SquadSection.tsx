@@ -252,10 +252,13 @@ const SquadSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="section-heading text-5xl md:text-6xl text-rugby-black mb-6">
-            OUR SQUAD
+            OUR TEAM
           </h2>
-          <p className="body-text-medium text-xl text-gray-600 max-w-3xl mx-auto">
-            Meet the warriors who wear the red and black with pride
+          <p className="body-text-medium text-xl text-gray-600 max-w-5xl mx-auto">
+            On the field, our players are not just a team: they are true warriors, ready to give their all to defend our colors.
+            Each brings their strength, energy, and passion, and together we form a united and determined bloc.
+            Whether during a match or a rainy training session, our players embody the spirit of solidarity,
+            courage, and determination that makes the Rugby Club de Forest/Vorst so proud.
           </p>
         </div>
 

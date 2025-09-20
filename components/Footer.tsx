@@ -30,8 +30,8 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="body-text text-gray-300 mb-6 max-w-md">
-              Founded in 1998, RC Forest has been building champions both on and off the field. 
-              Join our family and experience the power of rugby.
+              Founded in 1998, the Rugby Club de Forest/Vorst is much more than a rugby club:
+              it is a true family where the passion for the oval ball is passed down from generation to generation.
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
             <h4 className="body-text-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li><a href="#about" className="body-text text-gray-300 hover:text-rugby-red transition-colors">About Us</a></li>
-              <li><a href="#squad" className="body-text text-gray-300 hover:text-rugby-red transition-colors">Our Squad</a></li>
+              <li><a href="#squad" className="body-text text-gray-300 hover:text-rugby-red transition-colors">Our Team</a></li>
               <li><a href="#fixtures" className="body-text text-gray-300 hover:text-rugby-red transition-colors">Fixtures</a></li>
               <li><a href="#news" className="body-text text-gray-300 hover:text-rugby-red transition-colors">Latest News</a></li>
               <li><a href="#gallery" className="body-text text-gray-300 hover:text-rugby-red transition-colors">Gallery</a></li>

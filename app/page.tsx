@@ -13,7 +13,7 @@ const RCForestHomePage: React.FC = () => {
     <>
       <Head>
         <title>RC Forest Rugby Club - Concentration • Intensity • Unity</title>
-        <meta name="description" content="RC Forest Rugby Club - Founded in 1998, building champions both on and off the field. Join our family and experience the power of rugby." />
+        <meta name="description" content="Founded in 1998, the Rugby Club de Forest/Vorst is much more than a rugby club: it is a true family where the passion for the oval ball is passed down from generation to generation." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
