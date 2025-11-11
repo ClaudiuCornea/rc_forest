@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const HeroSection: React.FC = () => {
   return (
@@ -22,15 +23,13 @@ const HeroSection: React.FC = () => {
       <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
         {/* Logo/Icon */}
         <div className="mb-8 flex justify-center">
-          <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 border border-white/30">
-            <Image
-              src="/logo.png"
-              alt="RC Forest logo"
-              width={64} height={64}
-              className="w-16 h-16"
-              priority
-            />
-          </div>
+          <Image
+            src="/logo.webp"
+            alt="RC Forest logo"
+            width={64} height={64}
+            className="size-28"
+            priority
+          />
         </div>
 
         {/* Main Heading */}
@@ -50,19 +49,23 @@ const HeroSection: React.FC = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            size="lg" 
-            className="bg-rugby-red hover:bg-rugby-red-dark text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 hover-lift"
-          >
-            Join Our Team
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-white text-white hover:bg-white hover:text-rugby-black px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
-          >
-            View Fixtures
-          </Button>
+          <Link href="#contact">
+            <Button
+              size="lg"
+              className="bg-rugby-red hover:bg-rugby-red-dark text-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
+            >
+              Join Our Team
+            </Button>
+          </Link>
+          <Link href="#fixtures">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-rugby-black px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
+            >
+              View Fixtures
+            </Button>
+          </Link>
         </div>
       </div>
 

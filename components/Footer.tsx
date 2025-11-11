@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="bg-rugby-red p-3 rounded-lg">
                 <Image
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt="RC Forest logo"
                   width={32} height={32}
                   className="w-8 h-8"

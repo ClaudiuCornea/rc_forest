@@ -24,7 +24,7 @@ const fixtures: Match[] = [
   {
     id: 1,
     opponent: "WAER SEN MEN 1",
-    date: "2025-09-14",
+    date: "2025-12-12",
     time: "15:00",
     venue: "Zuiderlann 30, 8790 Waregem",
     isHome: false,
@@ -34,16 +34,13 @@ const fixtures: Match[] = [
   {
     id: 2,
     opponent: "AREN SEN MEN 1",
-    date: "2025-09-21",
+    date: "2025-12-11",
     time: "15:00",
     venue: "Boulevard de la deuxième armée britannique, 1190 Vorst",
     isHome: true,
     competition: "League Championship",
     status: "upcoming"
   },
-];
-
-const results: Match[] = [
   {
     id: 4,
     opponent: "River Eagles",
@@ -84,10 +81,10 @@ const FixturesSection: React.FC = () => {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      weekday: 'short', 
-      month: 'short', 
-      day: 'numeric' 
+    return date.toLocaleDateString('en-US', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric'
     });
   };
 
@@ -173,8 +170,73 @@ const FixturesSection: React.FC = () => {
     </Card>
   );
 
+  const NextMatchCard = () => {
+  // Find the next upcoming match
+  const nextMatch = fixtures
+    .filter((match) => new Date(`${match.date}T${match.time}`) > new Date())
+    .sort((a, b) => new Date(`${a.date}T${a.time}`).getTime() - new Date(`${b.date}T${b.time}`).getTime())[0];
+
+  if (!nextMatch) {
+    return (
+      <Card className="bg-gradient-to-r from-rugby-red to-rugby-red-dark text-white border-0">
+        <CardHeader>
+          <CardTitle className="section-heading text-3xl text-center pt-8">NEXT MATCH</CardTitle>
+        </CardHeader>
+        <CardContent className="text-center pb-8">
+          <h3 className="hero-text text-2xl mb-4">No upcoming matches scheduled</h3>
+          <p className="body-text-medium">Check back later for new fixtures</p>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  const matchDate = new Date(`${nextMatch.date}T${nextMatch.time}`);
+  const formattedDate = matchDate.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
+
+  const formattedTime = matchDate.toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true
+  });
+
+  const homeTeam = nextMatch.isHome ? "RC FOREST" : nextMatch.opponent;
+  const awayTeam = nextMatch.isHome ? nextMatch.opponent : "RC FOREST";
+
   return (
-    <section className="py-20 bg-white">
+    <Card className="bg-gradient-to-r from-rugby-red to-rugby-red-dark text-white border-0">
+      <CardHeader>
+        <CardTitle className="section-heading text-3xl text-center pt-8">NEXT MATCH</CardTitle>
+      </CardHeader>
+      <CardContent className="text-center pb-8">
+        <h3 className="hero-text text-4xl mb-4">{homeTeam} vs {awayTeam}</h3>
+        <div className="flex justify-center items-center gap-8 mb-6">
+          <div className="text-center">
+            <CalendarDaysIcon className="w-8 h-8 mx-auto mb-2" />
+            <div className="body-text-medium">{formattedDate}</div>
+          </div>
+          <div className="text-center">
+            <ClockIcon className="w-8 h-8 mx-auto mb-2" />
+            <div className="body-text-medium">{formattedTime}</div>
+          </div>
+          <div className="text-center">
+            <MapPinIcon className="w-8 h-8 mx-auto mb-2" />
+            <div className="body-text-medium">{nextMatch.venue}</div>
+          </div>
+        </div>
+        <Badge className="bg-white text-rugby-red text-lg px-6 py-2">
+          {getTimeUntilMatch(nextMatch.date, nextMatch.time)} to kickoff
+        </Badge>
+      </CardContent>
+    </Card>
+  );
+};
+
+  return (
+    <section className="py-20 bg-white" id="fixtures">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -199,48 +261,40 @@ const FixturesSection: React.FC = () => {
 
           <TabsContent value="fixtures">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {fixtures.map((match) => (
-                <MatchCard key={match.id} match={match} />
-              ))}
+              {fixtures
+                .filter((match) => {
+                  const matchDateTime = new Date(`${match.date}T${match.time}`);
+                  const now = new Date();
+                  return matchDateTime > now;
+                })
+                .sort((a, b) => new Date(`${a.date}T${a.time}`).getTime() - new Date(`${b.date}T${b.time}`).getTime())
+                .slice(0, 3)
+                .map((match) => (
+                  <MatchCard key={match.id} match={match} />
+                ))}
             </div>
           </TabsContent>
 
           <TabsContent value="results">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {results.map((match) => (
-                <MatchCard key={match.id} match={match} />
-              ))}
+              {fixtures
+                .filter((match) => {
+                  const matchDateTime = new Date(`${match.date}T${match.time}`);
+                  const now = new Date();
+                  return matchDateTime < now;
+                })
+                .sort((a, b) => new Date(`${b.date}T${b.time}`).getTime() - new Date(`${a.date}T${a.time}`).getTime())
+                .slice(0, 3)
+                .map((match) => (
+                  <MatchCard key={match.id} match={match} />
+                ))}
             </div>
           </TabsContent>
         </Tabs>
 
         {/* Next Match Highlight */}
         <div className="mt-16">
-          <Card className="bg-gradient-to-r from-rugby-red to-rugby-red-dark text-white border-0">
-            <CardHeader>
-              <CardTitle className="section-heading text-3xl text-center pt-8">NEXT MATCH</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center pb-8">
-              <h3 className="hero-text text-4xl mb-4">RC FOREST vs WAER SEN MEN 1</h3>
-              <div className="flex justify-center items-center gap-8 mb-6">
-                <div className="text-center">
-                  <CalendarDaysIcon className="w-8 h-8 mx-auto mb-2" />
-                  <div className="body-text-medium">Sept 14, 2025</div>
-                </div>
-                <div className="text-center">
-                  <ClockIcon className="w-8 h-8 mx-auto mb-2" />
-                  <div className="body-text-medium">3:00 PM</div>
-                </div>
-                <div className="text-center">
-                  <MapPinIcon className="w-8 h-8 mx-auto mb-2" />
-                  <div className="body-text-medium">Zuiderlann 30, 8790 Waregem</div>
-                </div>
-              </div>
-              <Badge className="bg-white text-rugby-red text-lg px-6 py-2">
-                {getTimeUntilMatch("2025-02-15", "15:00")} to kickoff
-              </Badge>
-            </CardContent>
-          </Card>
+          <NextMatchCard />
         </div>
       </div>
     </section>

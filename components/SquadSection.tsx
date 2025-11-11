@@ -9,7 +9,7 @@ interface Player {
   name: string;
   position: string;
   number: number;
-  age: number;
+  age: string;
   height: string;
   weight: string;
   avatar: string;
@@ -20,225 +20,225 @@ const players: Player[] = [
     name: "Dahdouh Karim",
     position: "Prop",
     number: 1,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Karim.png"
   },
   {
     name: "Inal Oghuzhan",
     position: "Hooker",
     number: 2,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Oguz.png"
   },
   {
     name: "Renaers Dylan",
     position: "Prop",
     number: 3,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "29",
+    height: "1.84",
+    weight: "130",
     avatar: "./Vik.png"
   },
   {
     name: "Cornea Claudiu",
     position: "Lock",
     number: 4,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "31",
+    height: "1.90",
+    weight: "135",
     avatar: "./Claudiu.png"
   },
   {
     name: "Hoffman Warren",
     position: "Lock",
     number: 5,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Warren.png"
   },
   {
     name: "Leleux Nicolas",
     position: "Captain - Flanker",
     number: 6,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Nico.png"
   },
   {
-    name: "Cajal Alejandro",
+    name: "Cajal Barraco Alejandro",
     position: "Flanker",
     number: 7,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "31",
+    height: "1.65",
+    weight: "74",
     avatar: "./Cajal.png"
   },
   {
     name: "Trouman Lionel",
     position: "Number 8",
     number: 8,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "28",
+    height: "1.88",
+    weight: "103",
     avatar: "./Lionel.png"
   },
   {
     name: "Peeters Antoine",
     position: "Scrum-half",
     number: 9,
-    age: 18,
+    age: "29",
     height: "1.75",
-    weight: "75 kg",
+    weight: "85",
     avatar: "./Peeters.png"
   },
   {
     name: "Ruymbeke Eliot",
     position: "Fly-half",
     number: 10,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "27",
+    height: "1.80",
+    weight: "78",
     avatar: "./Eliot.png"
   },
   {
     name: "V. Anton",
     position: "Left Wing",
     number: 11,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Anton.png"
   },
   {
     name: "Barboza Ethan",
     position: "Inside Center",
     number: 12,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "21",
+    height: "1.85",
+    weight: "96",
     avatar: "./Ethan.png"
   },
   {
-    name: "Etn Florian",
+    name: "Florian De Amicis Etienne",
     position: "Outside Center",
     number: 13,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "33",
+    height: "1.81",
+    weight: "95",
     avatar: "./Flo.png"
   },
   {
     name: "Chamorro Ivan",
     position: "Right Wing",
     number: 14,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Ivan.png"
   },
   {
     name: "Tabirta Stefan",
     position: "Fullback",
     number: 15,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Stephan.png"
   },
   {
     name: "Kosk Adrian",
     position: "",
     number: 16,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "21",
+    height: "",
+    weight: "",
     avatar: "./Adrian.png"
   },
   {
     name: "Bertinchamps Christophe",
     position: "",
     number: 17,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "34",
+    height: "1.80",
+    weight: "97",
     avatar: "./Jason.png"
   },
   {
     name: "N. Antonio",
     position: "",
     number: 18,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Antonio.png"
   },
   {
     name: "T. Alexandre",
     position: "",
     number: 19,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Alex.png"
   },
   {
-    name: "Chkhikvadze Vano",
+    name: "Vano Chkhikvadze",
     position: "",
     number: 20,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "48",
+    height: "1.98",
+    weight: "116",
     avatar: "./Vano.png"
   },
   {
-    name: "Martinez Alex",
+    name: "Martin Martinez Alexandre",
     position: "",
     number: 21,
-    age: 18,
+    age: "27",
     height: "1.75",
-    weight: "75 kg",
+    weight: "68",
     avatar: "./Alex Marty.png"
   },
   {
     name: "Gloaguen Swen",
     position: "",
     number: 22,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Zwen.png"
   },
   {
     name: "Mehdi “Baba” Ba",
     position: "Coach",
     number: 0,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Baba.png"
   },
   {
     name: "Patrick",
     position: "Coach",
     number: 0,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Patrick.png"
   },
   {
     name: "Psaroudakis Stelios",
     position: "Coach",
     number: 0,
-    age: 18,
-    height: "1.75",
-    weight: "75 kg",
+    age: "",
+    height: "",
+    weight: "",
     avatar: "./Stelios.png"
   },
 ];
@@ -265,8 +265,8 @@ const SquadSection: React.FC = () => {
         {/* Players Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {players.map((player, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="bg-white border-0 shadow-lg hover-lift cursor-pointer transition-all duration-300"
               onClick={() => setSelectedPlayer(player)}
             >
@@ -281,28 +281,62 @@ const SquadSection: React.FC = () => {
                   </Avatar>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="body-text-bold text-lg text-rugby-black">{player.name}</h3>
-                      {Boolean(player.number) && <Badge className="bg-rugby-red text-white text-sm">#{player.number}</Badge>}
+                      <h3 className="body-text-bold text-lg text-rugby-black">
+                        {player.name}
+                      </h3>
+                      {Boolean(player.number) && (
+                        <Badge className="bg-rugby-red text-white text-sm">
+                          #{player.number}
+                        </Badge>
+                      )}
                     </div>
-                    <p className="body-text text-gray-600">{player.position}</p>
+                    <p className="body-text text-gray-600">
+                      {player.position}
+                    </p>
                   </div>
                 </div>
 
                 {/* Player Stats */}
-                <div className="grid grid-cols-3 gap-4 mb-4">
-                  <div className="text-center">
-                    <div className="hero-text text-2xl text-rugby-red">{player.age}</div>
-                    <div className="body-text text-xs text-gray-500">Age</div>
+                {(player.age || player.height || player.weight) && (
+                  <div className="grid grid-cols-3 gap-4 mb-4">
+                    <div className="text-center">
+                      {player.age && (
+                        <>
+                          <div className="hero-text text-2xl text-rugby-red">
+                            {player.age}
+                          </div>
+                          <div className="body-text text-xs text-gray-500">
+                            Age
+                          </div>
+                        </>
+                      )}
+                    </div>
+                    <div className="text-center">
+                      {player.height && (
+                        <>
+                          <div className="hero-text text-2xl text-rugby-red">
+                            {player.height} m
+                          </div>
+                          <div className="body-text text-xs text-gray-500">
+                            Height
+                          </div>
+                        </>
+                      )}
+                    </div>
+                    <div className="text-center">
+                      {player.weight && (
+                        <>
+                          <div className="hero-text text-2xl text-rugby-red">
+                            {player.weight} kg
+                          </div>
+                          <div className="body-text text-xs text-gray-500">
+                            Weight
+                          </div>
+                        </>
+                      )}
+                    </div>
                   </div>
-                  <div className="text-center">
-                    <div className="hero-text text-2xl text-rugby-red">{player.height}</div>
-                    <div className="body-text text-xs text-gray-500">Height</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="hero-text text-2xl text-rugby-red">{player.weight}</div>
-                    <div className="body-text text-xs text-gray-500">Weight</div>
-                  </div>
-                </div>
+                )}
               </CardContent>
             </Card>
           ))}
@@ -319,14 +353,18 @@ const SquadSection: React.FC = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-rugby-black/80 to-transparent"></div>
           <div className="absolute bottom-8 left-8 text-white">
-            <h3 className="section-heading text-3xl mb-2">TEAM SPIRIT</h3>
-            <p className="body-text-medium text-lg opacity-90">United we stand, divided we fall</p>
+            <h3 className="section-heading text-3xl mb-2">
+              TEAM SPIRIT
+            </h3>
+            <p className="body-text-medium text-lg opacity-90">
+              United we stand, divided we fall
+            </p>
           </div>
         </div>
 
         {/* Player Detail Modal Placeholder */}
         {selectedPlayer && (
-          <div 
+          <div
             className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
             onClick={() => setSelectedPlayer(null)}
           >
@@ -339,27 +377,58 @@ const SquadSection: React.FC = () => {
                       {selectedPlayer.name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>
                   </Avatar>
-                  <h3 className="section-heading text-2xl text-rugby-black mb-1">{selectedPlayer.name}</h3>
-                  <p className="body-text text-gray-600 mb-2">{selectedPlayer.position}</p>
-                  {Boolean(selectedPlayer.number) && <Badge className="bg-rugby-red text-white">#{selectedPlayer.number}</Badge>}
+                  <h3 className="section-heading text-2xl text-rugby-black mb-1">
+                    {selectedPlayer.name}
+                  </h3>
+                  <p className="body-text text-gray-600 mb-2">
+                    {selectedPlayer.position}
+                  </p>
+                  {Boolean(selectedPlayer.number) && <Badge className="bg-rugby-red text-white">
+                    #{selectedPlayer.number}
+                  </Badge>}
                 </div>
-                
-                <div className="space-y-4">
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    <div>
-                      <div className="body-text-semibold text-rugby-black">Age</div>
-                      <div className="body-text text-gray-600">{selectedPlayer.age}</div>
-                    </div>
-                    <div>
-                      <div className="body-text-semibold text-rugby-black">Height</div>
-                      <div className="body-text text-gray-600">{selectedPlayer.height}</div>
-                    </div>
-                    <div>
-                      <div className="body-text-semibold text-rugby-black">Weight</div>
-                      <div className="body-text text-gray-600">{selectedPlayer.weight}</div>
+                {(selectedPlayer.age || selectedPlayer.height || selectedPlayer.weight) && (
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-3 gap-4 text-center">
+                      <div>
+                        {selectedPlayer.age && (
+                          <>
+                            <div className="body-text text-gray-600">
+                              {selectedPlayer.age}
+                            </div>
+                            <div className="body-text-semibold text-rugby-black">
+                              Age
+                            </div>
+                          </>
+                        )}
+                      </div>
+                      <div>
+                        {selectedPlayer.height && (
+                          <>
+                            <div className="body-text text-gray-600">
+                              {selectedPlayer.height}
+                            </div>
+                            <div className="body-text-semibold text-rugby-black">
+                              Height
+                            </div>
+                          </>
+                        )}
+                      </div>
+                      <div>
+                        {selectedPlayer.weight && (
+                          <>
+                            <div className="body-text text-gray-600">
+                              {selectedPlayer.weight}
+                            </div>
+                            <div className="body-text-semibold text-rugby-black">
+                              Weight
+                            </div>
+                          </>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </CardContent>
             </Card>
           </div>
