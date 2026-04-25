@@ -37,6 +37,20 @@ export const ThemeStyles = ({ theme }: { theme?: Theme | null }) => {
       --error-color: ${errorColor};
       --error-color-rgb: ${hexToRgb(errorColor)};
     }
+
+    /* CRITICAL CSS: Prevent flash of unstyled content & delay of paint */
+    body { 
+      background-color: ${backgroundColor} !important; 
+      color: ${textWhiteColor} !important;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-barlow), ui-sans-serif, system-ui;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Ensure hero background colors are available immediately */
+    #contact, section { background-color: ${backgroundColor}; }
+    .bg-club-black { background-color: ${backgroundColor} !important; }
   `;
 
   return (

@@ -21,14 +21,11 @@
 
 /* Base resets & typography */
 body { 
-  background: var(--background-color); 
-  color: var(--text-white-color); 
   font-family: var(--font-sans); 
   overflow-x:hidden; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .stripe-bg { 
   background-image: repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(var(--primary-color-rgb),0.03) 40px,rgba(var(--primary-color-rgb),0.03) 41px); 
 }
