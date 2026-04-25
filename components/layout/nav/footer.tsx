@@ -65,6 +65,7 @@ export const Footer = React.memo(() => {
                   href={social?.link || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Follow us on ${social?.platform || "Social Media"}`}
                   className="p-3 bg-white/5 hover:bg-club-red transition-all group rounded-none"
                   data-tina-field={tinaField(social)}
                 >
