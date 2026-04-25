@@ -8,12 +8,13 @@ import { useRef, useState, useEffect } from "react";
 
 const SectionLoading = () => <div className="min-h-[20rem] bg-club-black/20 animate-pulse" />;
 
-// Dynamic imports for blocks that are likely below the fold to reduce the initial bundle size
-const About = dynamic(() => import("./about").then((mod) => mod.About), { loading: SectionLoading });
-const Team = dynamic(() => import("./team").then((mod) => mod.Team), { loading: SectionLoading });
-const Match = dynamic(() => import("./match").then((mod) => mod.Match), { loading: SectionLoading });
-const Gallery = dynamic(() => import("./gallery").then((mod) => mod.Gallery), { loading: SectionLoading });
-const Contact = dynamic(() => import("./contact").then((mod) => mod.Contact), { loading: SectionLoading });
+// Dynamic imports for blocks that are likely below the fold to reduce the initial bundle size.
+// We keep ssr: true (default) so they are rendered on the server for SEO.
+const About = dynamic(() => import("./about").then((mod) => mod.About), { loading: SectionLoading, ssr: true });
+const Team = dynamic(() => import("./team").then((mod) => mod.Team), { loading: SectionLoading, ssr: true });
+const Match = dynamic(() => import("./match").then((mod) => mod.Match), { loading: SectionLoading, ssr: true });
+const Gallery = dynamic(() => import("./gallery").then((mod) => mod.Gallery), { loading: SectionLoading, ssr: true });
+const Contact = dynamic(() => import("./contact").then((mod) => mod.Contact), { loading: SectionLoading, ssr: true });
 
 export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
   if (!props.blocks) return null;
@@ -31,8 +32,8 @@ export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
           );
         }
 
-        // For all other blocks, we use LazyBlock which hydrates on scroll in production,
-        // but renders immediately if we detect we're in the Tina CMS editor.
+        // For all other blocks, we use LazyBlock which ensures visibility for SEO
+        // while deferring full client-side hydration until scroll.
         return <LazyBlock key={i} block={block} />;
       })}
     </>
@@ -40,16 +41,26 @@ export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
 };
 
 const LazyBlock = ({ block }: { block: PageBlocks }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  // We initialize to true for SSR/SEO, but set to false on mount to enable lazy loading for users.
+  // This ensures crawlers see the content, but the browser doesn't execute the full JS 
+  // until the section enters the viewport.
+  const [isVisible, setIsVisible] = useState(true);
+  const [hasMounted, setHasMounted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // If we're in the Tina CMS editor, we want to skip lazy loading so all fields are editable.
+    setHasMounted(true);
+    
+    // Check if we are in the Tina CMS editor
     const isTina = window.location.search.includes('tina') || window.parent !== window;
+    
     if (isTina) {
       setIsVisible(true);
       return;
     }
+
+    // On the client, we start as not visible to save on heavy execution (TBT)
+    setIsVisible(false);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -58,7 +69,7 @@ const LazyBlock = ({ block }: { block: PageBlocks }) => {
           observer.disconnect();
         }
       },
-      { rootMargin: "400px" } // Start loading well before it enters the viewport
+      { rootMargin: "600px" } // Load well before it enters the viewport
     );
 
     if (ref.current) {
@@ -68,9 +79,11 @@ const LazyBlock = ({ block }: { block: PageBlocks }) => {
     return () => observer.disconnect();
   }, []);
 
+  // During SSR (before hydration), isVisible is true, so search engines see the block.
+  // After hydration, isVisible becomes false (via useEffect) and then true on scroll.
   return (
     <div ref={ref} data-tina-field={tinaField(block)}>
-      {isVisible ? <Block {...block} /> : <SectionLoading />}
+      {isVisible || !hasMounted ? <Block {...block} /> : <SectionLoading />}
     </div>
   );
 };
