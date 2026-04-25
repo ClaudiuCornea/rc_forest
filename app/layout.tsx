@@ -39,10 +39,7 @@ export default function RootLayout({
       )}
       suppressHydrationWarning
     >
-      <head>
-        <link rel="preconnect" href="https://assets.tina.io" />
-        <link rel="preconnect" href="https://res.cloudinary.com" />
-      </head>
+      <head />
       <body
         className="min-h-screen bg-background font-sans antialiased"
         suppressHydrationWarning
