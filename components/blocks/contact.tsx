@@ -8,17 +8,25 @@ import { Reveal } from '../reveal';
 import { useState } from 'react';
 import { MapPin, Send } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { sendEmail } from '@/app/actions/send-email';
 
 export const Contact = ({ data }: { data: PageBlocksContact }) => {
   const [showMap, setShowMap] = useState(false);
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('sending');
-    setTimeout(() => {
+    
+    const formData = new FormData(e.currentTarget);
+    const result = await sendEmail(formData);
+
+    if (result.success) {
       setStatus('success');
-    }, 2000);
+    } else {
+      setStatus('error');
+      alert(result.error || 'Something went wrong');
+    }
   };
 
   return (
@@ -147,6 +155,7 @@ export const Contact = ({ data }: { data: PageBlocksContact }) => {
                             </label>
                             <input 
                               required
+                              name="firstName"
                               type="text" 
                               id="firstName" 
                               placeholder="Jean" 
@@ -159,6 +168,7 @@ export const Contact = ({ data }: { data: PageBlocksContact }) => {
                             </label>
                             <input 
                               required
+                              name="lastName"
                               type="text" 
                               id="lastName" 
                               placeholder="Dupont" 
@@ -173,6 +183,7 @@ export const Contact = ({ data }: { data: PageBlocksContact }) => {
                           </label>
                           <input 
                             required
+                            name="email"
                             type="email" 
                             id="email" 
                             placeholder="jean@example.com" 
@@ -185,12 +196,12 @@ export const Contact = ({ data }: { data: PageBlocksContact }) => {
                             {data.form.rugbyExperienceLabel}
                           </label>
                           <div className="relative">
-                            <select id="rugbyExperience" className="w-full bg-white/[0.03] border border-white/10 text-white text-sm px-5 py-4 transition-all focus:border-club-red outline-none appearance-none hover:bg-white/[0.05]">
+                            <select name="experience" id="rugbyExperience" className="w-full bg-white/[0.03] border border-white/10 text-white text-sm px-5 py-4 transition-all focus:border-club-red outline-none appearance-none hover:bg-white/[0.05]">
                               <option value="" className="bg-club-black">Select your level...</option>
-                              <option className="bg-club-black">Complete Beginner</option>
-                              <option className="bg-club-black">Casual Player</option>
-                              <option className="bg-club-black">Club Experience</option>
-                              <option className="bg-club-black">Competitive Level</option>
+                              <option value="Beginner" className="bg-club-black">Complete Beginner</option>
+                              <option value="Casual" className="bg-club-black">Casual Player</option>
+                              <option value="Club" className="bg-club-black">Club Experience</option>
+                              <option value="Competitive" className="bg-club-black">Competitive Level</option>
                             </select>
                             <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-club-red opacity-50">
                               ▼
@@ -203,6 +214,7 @@ export const Contact = ({ data }: { data: PageBlocksContact }) => {
                             {data.form.messageLabel}
                           </label>
                           <textarea 
+                            name="message"
                             id="message" 
                             placeholder="Tell us a bit about yourself..." 
                             rows={4} 
