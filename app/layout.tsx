@@ -1,33 +1,28 @@
 import React from "react";
-import { Metadata } from "next";
-import { Inter as FontSans, Lato, Nunito } from "next/font/google";
+import { Bebas_Neue, Barlow_Condensed, Barlow } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { VideoDialogProvider } from "@/components/ui/VideoDialogContext";
-import VideoDialog from "@/components/ui/VideoDialog";
-
 import "@/styles.css";
-import { TailwindIndicator } from "@/components/ui/breakpoint-indicator";
 
-const fontSans = FontSans({
+const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const nunito = Nunito({
-  subsets: ["latin"],
-  variable: "--font-nunito",
-});
-
-const lato = Lato({
-  subsets: ["latin"],
-  variable: "--font-lato",
+  variable: "--font-bebas",
   weight: "400",
+  display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Tina",
-  description: "Tina Cloud Starter",
-};
+const barlowCondensed = Barlow_Condensed({
+  subsets: ["latin"],
+  variable: "--font-barlow-cond",
+  weight: ["400", "700"],
+  display: "swap",
+});
+
+const barlow = Barlow({
+  subsets: ["latin"],
+  variable: "--font-barlow",
+  weight: ["400", "500"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -35,13 +30,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn(fontSans.variable, nunito.variable, lato.variable)}>
-      <body className="min-h-screen bg-background font-sans antialiased">
-        <VideoDialogProvider>
-          {children}
-          <VideoDialog />
-        </VideoDialogProvider>
-        <TailwindIndicator />
+    <html
+      lang="en"
+      className={cn(
+        bebasNeue.variable,
+        barlowCondensed.variable,
+        barlow.variable
+      )}
+      suppressHydrationWarning
+    >
+      <head>
+        <link rel="preconnect" href="https://assets.tina.io" />
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+      </head>
+      <body
+        className="min-h-screen bg-background font-sans antialiased"
+        suppressHydrationWarning
+      >
+        {children}
       </body>
     </html>
   );

@@ -1,28 +1,39 @@
 import type { Collection } from 'tinacms';
-import { heroBlockSchema } from '@/components/blocks/hero';
-import { contentBlockSchema } from '@/components/blocks/content';
-import { testimonialBlockSchema } from '@/components/blocks/testimonial';
-import { featureBlockSchema } from '@/components/blocks/features';
-import { videoBlockSchema } from '@/components/blocks/video';
-import { calloutBlockSchema } from '@/components/blocks/callout';
-import { statsBlockSchema } from '@/components/blocks/stats';
-import { ctaBlockSchema } from '@/components/blocks/call-to-action';
+import { 
+  heroBlockSchema, 
+  aboutBlockSchema, 
+  teamBlockSchema, 
+  matchBlockSchema, 
+  galleryBlockSchema, 
+  contactBlockSchema 
+} from '../schemas/blocks';
 
 const Page: Collection = {
   label: 'Pages',
   name: 'page',
   path: 'content/pages',
   format: 'mdx',
-  ui: {
-    router: ({ document }) => {
-      const filepath = document._sys.breadcrumbs.join('/');
-      if (filepath === 'home') {
-        return '/';
-      }
-      return `/${filepath}`;
-    },
-  },
   fields: [
+    {
+      type: 'object',
+      name: 'seo',
+      label: 'SEO',
+      fields: [
+        {
+          type: 'string',
+          name: 'title',
+          label: 'Title',
+        },
+        {
+          type: 'string',
+          name: 'description',
+          label: 'Description',
+          ui: {
+            component: 'textarea',
+          },
+        },
+      ],
+    },
     {
       type: 'object',
       list: true,
@@ -33,13 +44,11 @@ const Page: Collection = {
       },
       templates: [
         heroBlockSchema,
-        calloutBlockSchema,
-        featureBlockSchema,
-        statsBlockSchema,
-        ctaBlockSchema,
-        contentBlockSchema,
-        testimonialBlockSchema,
-        videoBlockSchema,
+        aboutBlockSchema,
+        teamBlockSchema,
+        matchBlockSchema,
+        galleryBlockSchema,
+        contactBlockSchema,
       ],
     },
   ],

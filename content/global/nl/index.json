@@ -1,0 +1,50 @@
+{
+  "header": {
+    "logo": "/uploads/logo.webp",
+    "icon": {
+      "name": "Tina",
+      "color": "orange",
+      "style": "float"
+    },
+    "name": "FOREST-VORST RUGBY CLUB",
+    "color": "default",
+    "nav": [
+      {
+        "href": "#about",
+        "label": "Over ons"
+      },
+      {
+        "href": "#team",
+        "label": "Team"
+      },
+      {
+        "href": "#schedule",
+        "label": "Wedstrijden"
+      },
+      {
+        "href": "#gallery",
+        "label": "Galerij"
+      }
+    ],
+    "joinButton": {
+      "label": "Word lid van de club",
+      "link": "#contact"
+    }
+  },
+  "footer": {
+    "backgroundText": "FOREST VORST",
+    "description": "Forest-Vorst Rugby Club, opgericht in 2007, is de toonaangevende multiculturele rugbygemeenschap van Brussel. Eén familie, één passie.",
+    "copyrightStartYear": "2007",
+    "footerText": "FVRC",
+    "socialLinks": [
+      {
+        "platform": "Instagram",
+        "link": "https://instagram.com/forestvorsturugby"
+      },
+      {
+        "platform": "Facebook",
+        "link": "https://facebook.com/forestvorsturugby"
+      }
+    ]
+  }
+}

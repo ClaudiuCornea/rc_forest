@@ -1,11 +1,8 @@
 import { defineConfig } from "tinacms";
 import nextConfig from '../next.config'
 
-import Post from "./collection/post";
-import Global from "./collection/global";
-import Author from "./collection/author";
+import { Settings, Theme } from "./collection/global";
 import Page from "./collection/page";
-import Tag from "./collection/tag";
 
 const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -32,7 +29,35 @@ const config = defineConfig({
     basePath: nextConfig.basePath?.replace(/^\//, '') || '', // The base path of the app (could be /blog)
   },
   schema: {
-    collections: [Page, Post, Author, Tag, Global],
+    collections: [
+      {
+        ...Page,
+        path: "content/pages",
+        ui: {
+          ...Page.ui,
+          router: ({ document }) => {
+            const locale = document._sys.breadcrumbs[0];
+            const filepath = document._sys.breadcrumbs.slice(1).join('/');
+            if (filepath === 'home') {
+              return `/${locale}`;
+            }
+            return `/${locale}/${filepath}`;
+          },
+        },
+      },
+      {
+        ...Settings,
+        path: "content/global",
+      },
+      {
+        ...Theme,
+        path: "content/global",
+        ui: {
+          ...Theme.ui,
+          router: () => `/`,
+        },
+      },
+    ],
   },
 });
 

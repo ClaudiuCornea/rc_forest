@@ -1,5 +1,11 @@
-import { Button } from "@/components/ui/button"
+// app/not-found.tsx
+// ✅ This file must live at app/not-found.tsx (App Router root).
+// ✅ Do NOT have any pages/404.tsx or pages/_error.tsx — those trigger the
+//    Pages Router renderer which causes the "<Html> outside _document" build error.
+
 import Link from "next/link"
+
+export const dynamic = "force-static";
 
 interface NotFoundProps {
   title?: string
@@ -23,6 +29,7 @@ export default function NotFound({
 }: NotFoundProps) {
   return (
     <div className="relative text-center z-[1] pt-52">
+      <Illustration className="mx-auto mb-8 w-64 text-white/10" />
       <h1 className="mt-4 text-balance text-5xl font-semibold tracking-tight text-primary sm:text-7xl">
         {title}
       </h1>
@@ -30,11 +37,13 @@ export default function NotFound({
         {description}
       </p>
       <div className="mt-10 mx-auto">
-        <Button asChild>
-          <Link href="/">Take me home</Link>
-        </Button>
+        <Link
+          href="/"
+          className="btn-skew inline-flex items-center gap-2 bg-club-red text-white font-cond font-bold text-sm tracking-[0.125rem] uppercase px-8 py-4 transition-all hover:-translate-y-1"
+        >
+          Take me home
+        </Link>
       </div>
     </div>
   )
 }
-

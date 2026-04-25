@@ -1,0 +1,50 @@
+{
+  "header": {
+    "logo": "/uploads/logo.webp",
+    "icon": {
+      "name": "Tina",
+      "color": "orange",
+      "style": "float"
+    },
+    "name": "FOREST-VORST RUGBY CLUB",
+    "color": "default",
+    "nav": [
+      {
+        "href": "#about",
+        "label": "À propos"
+      },
+      {
+        "href": "#team",
+        "label": "Équipe"
+      },
+      {
+        "href": "#schedule",
+        "label": "Matchs"
+      },
+      {
+        "href": "#gallery",
+        "label": "Galerie"
+      }
+    ],
+    "joinButton": {
+      "label": "Rejoindre le Club",
+      "link": "#contact"
+    }
+  },
+  "footer": {
+    "backgroundText": "FOREST VORST",
+    "description": "Fondé en 2007, le Forest-Vorst Rugby Club est la première communauté de rugby multiculturelle de Bruxelles. Une famille, une passion.",
+    "copyrightStartYear": "2007",
+    "footerText": "FVRC",
+    "socialLinks": [
+      {
+        "platform": "Instagram",
+        "link": "https://instagram.com/forestvorsturugby"
+      },
+      {
+        "platform": "Facebook",
+        "link": "https://facebook.com/forestvorsturugby"
+      }
+    ]
+  }
+}

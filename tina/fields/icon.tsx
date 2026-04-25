@@ -1,11 +1,9 @@
 'use client';
 import React from 'react';
 import { Button, wrapFieldsWithMeta } from 'tinacms';
-import { BiChevronRight } from 'react-icons/bi';
-import { GoCircleSlash } from 'react-icons/go';
+import { ChevronRight, Ban } from 'lucide-react';
 import { Icon, IconOptions } from '../../components/icon';
 import { Popover, PopoverButton, Transition, PopoverPanel } from '@headlessui/react';
-import { ColorPickerInput } from './color';
 
 const parseIconName = (name: string) => {
   const splitName = name.split(/(?=[A-Z])/);
@@ -39,10 +37,10 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
               <Button className={`text-sm h-11 px-4 ${InputIcon ? 'h-11' : 'h-10'}`} size='custom' rounded='full' variant={open ? 'secondary' : 'white'}>
                 {InputIcon && <InputIcon className='w-7 mr-1 h-auto fill-current text-blue-500' />}
                 {inputLabel}
-                {!InputIcon && <BiChevronRight className='w-5 h-auto fill-current opacity-70 ml-1' />}
+                {!InputIcon && <ChevronRight className='w-5 h-auto fill-current opacity-70 ml-1' />}
               </Button>
             </PopoverButton>
-            <div className='absolute w-full min-w-[192px] max-w-2xl -bottom-2 left-0 translate-y-full' style={{ zIndex: 1000 }}>
+            <div className='absolute w-full min-w-[12rem] max-w-2xl -bottom-2 left-0 translate-y-full' style={{ zIndex: 1000 }}>
               <Transition
                 enter='transition duration-150 ease-out'
                 enterFrom='transform opacity-0 -translate-y-2'
@@ -83,7 +81,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                               close();
                             }}
                           >
-                            <GoCircleSlash className='w-6 h-auto text-gray-200' />
+                            <Ban className='w-6 h-auto text-gray-200' />
                           </button>
                           {filteredBlocks.map((name) => {
                             return (
@@ -138,23 +136,15 @@ export const iconSchema = {
       type: 'string',
       label: 'Color',
       name: 'color',
-      ui: {
-        component: ColorPickerInput,
-      },
     },
     {
-      name: 'style',
-      label: 'Style',
       type: 'string',
+      label: 'Style',
+      name: 'style',
       options: [
-        {
-          label: 'Circle',
-          value: 'circle',
-        },
-        {
-          label: 'Float',
-          value: 'float',
-        },
+        { label: 'Circle', value: 'circle' },
+        { label: 'Float', value: 'float' },
+        { label: 'Regular', value: 'regular' },
       ],
     },
   ],

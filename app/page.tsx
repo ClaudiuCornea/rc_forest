@@ -1,18 +1,32 @@
-import React from "react";
-import client from "@/tina/__generated__/client";
-import Layout from "@/components/layout/layout";
-import ClientPage from "./[...urlSegments]/client-page";
+"use client";
 
-export const revalidate = 300;
+import { useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 
-export default async function Home() {
-  const data = await client.queries.page({
-    relativePath: `home.mdx`,
-  });
+const SUPPORTED_LOCALES = ["en", "fr", "nl"];
+
+/**
+ * Root page component that handles redirection to the default locale.
+ * Also serves as a catch-all for basic locale validation in 'output: export' mode.
+ */
+export default function RootPage() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // For pure static exports, we just want to ensure the user lands on a supported locale
+    if (!pathname) return;
+    const segments = pathname.split("/");
+    const currentLocale = segments[1];
+
+    if (!SUPPORTED_LOCALES.includes(currentLocale)) {
+      router.replace("/en");
+    }
+  }, [router, pathname]);
 
   return (
-    <Layout rawPageData={data}>
-      <ClientPage {...data} />
-    </Layout>
+    <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="size-12 border-4 border-club-red border-t-transparent rounded-full animate-spin"></div>
+    </div>
   );
 }

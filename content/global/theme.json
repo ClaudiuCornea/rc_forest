@@ -1,0 +1,11 @@
+{
+  "primaryColor": "#CC0000",
+  "backgroundColor": "#0D0D0D",
+  "offBlackColor": "#1A1A1A",
+  "textWhiteColor": "#F5F5F5",
+  "textGrayColor": "#888888",
+  "successColor": "#15803D",
+  "errorColor": "#DC2626",
+  "font": "sans",
+  "darkMode": "dark"
+}

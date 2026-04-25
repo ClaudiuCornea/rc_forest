@@ -1,0 +1,44 @@
+🦙 TinaCMS Dev Server is initializing...
+[2K[1GIndexing local files ⠋
+│
+○  ✅ 🦙 TinaCMS Dev Server is active: ─────────────────────────────────────╮
+│                                                                          │
+│  🦙 TinaCMS URLs                                                         │
+│     CMS:                <your-dev-server-url>/admin/index.html           │
+│     API playground:     <your-dev-server-url>/admin/index.html#/graphql  │
+│     API url:            http://localhost:4001/graphql                    │
+│                                                                          │
+│  🤖 Auto-generated files                                                 │
+│     GraphQL Client:     tina/__generated__/client.ts                     │
+│     Typescript Types:   tina/__generated__/types.ts                      │
+│                                                                          │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+Running web application with command: next build
+ ⚠ You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env
+   ▲ Next.js 15.3.8
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 11.0s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/6) ...
+Error: <Html> should not be imported outside of pages/_document.
+Read more: https://nextjs.org/docs/messages/no-document-import-in-page
+    at y (.next/server/chunks/932.js:6:1351)
+Error occurred prerendering page "/404". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: <Html> should not be imported outside of pages/_document.
+Read more: https://nextjs.org/docs/messages/no-document-import-in-page
+    at K (/home/pingprice/rc-forest-2/test-app/node_modules/.pnpm/next@15.3.8_@babel+core@7.25.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/compiled/next-server/pages.runtime.prod.js:16:6526)
+    at y (/home/pingprice/rc-forest-2/test-app/.next/server/chunks/932.js:6:1351)
+    at renderWithHooks (/home/pingprice/rc-forest-2/test-app/node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5658:16)
+    at renderIndeterminateComponent (/home/pingprice/rc-forest-2/test-app/node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5732:15)
+    at renderElement (/home/pingprice/rc-forest-2/test-app/node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5957:7)
+    at renderNodeDestructiveImpl (/home/pingprice/rc-forest-2/test-app/node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (/home/pingprice/rc-forest-2/test-app/node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6087:14)
+    at finishClassComponent (/home/pingprice/rc-forest-2/test-app/node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5688:3)
+    at renderClassComponent (/home/pingprice/rc-forest-2/test-app/node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5696:3)
+    at renderElement (/home/pingprice/rc-forest-2/test-app/node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5954:7)
+Export encountered an error on /_error: /404, exiting the build.
+ ⨯ Next.js build worker exited with code: 1 and signal: null
+child process exited with code 1

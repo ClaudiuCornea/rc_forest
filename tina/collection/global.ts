@@ -1,10 +1,8 @@
 import type { Collection } from "tinacms";
-import { ColorPickerInput } from "../fields/color";
 import { iconSchema } from "../fields/icon";
-import { icon } from "mermaid/dist/rendering-util/rendering-elements/shapes/icon.js";
 
-const Global: Collection = {
-  label: "Global",
+export const Settings: Collection = {
+  label: "Global Settings",
   name: "global",
   path: "content/global",
   format: "json",
@@ -17,20 +15,15 @@ const Global: Collection = {
       label: "Header",
       name: "header",
       fields: [
-        iconSchema as any,
+        {
+          type: "image",
+          label: "Logo",
+          name: "logo",
+        },
         {
           type: "string",
           label: "Name",
           name: "name",
-        },
-        {
-          type: "string",
-          label: "Color",
-          name: "color",
-          options: [
-            { label: "Default", value: "default" },
-            { label: "Primary", value: "primary" },
-          ],
         },
         {
           type: "object",
@@ -59,6 +52,23 @@ const Global: Collection = {
             },
           ],
         },
+        {
+          type: "object",
+          label: "Join Button",
+          name: "joinButton",
+          fields: [
+            {
+              type: "string",
+              label: "Label",
+              name: "label",
+            },
+            {
+              type: "string",
+              label: "Link",
+              name: "link",
+            },
+          ],
+        },
       ],
     },
     {
@@ -67,75 +77,48 @@ const Global: Collection = {
       name: "footer",
       fields: [
         {
+          type: "string",
+          label: "Background Ghost Text (e.g., FOREST VORST)",
+          name: "backgroundText",
+        },
+        {
+          type: "string",
+          label: "Footer Description",
+          name: "description",
+          ui: {
+            component: "textarea"
+          }
+        },
+        {
+          type: "string",
+          label: "Copyright Start Year",
+          name: "copyrightStartYear",
+          description: "e.g., 2007",
+        },
+        {
+          type: "string",
+          label: "Footer Text (e.g., FVRC)",
+          name: "footerText",
+        },
+        {
           type: "object",
           label: "Social Links",
-          name: "social",
+          name: "socialLinks",
           list: true,
           ui: {
-            itemProps: (item) => {
-              return { label: item?.icon?.name || 'undefined' };
-            },
+            itemProps: (social) => ({ label: (social as any)?.platform }),
           },
           fields: [
-            iconSchema as any,
             {
               type: "string",
-              label: "Url",
-              name: "url",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      type: "object",
-      label: "Theme",
-      name: "theme",
-      // @ts-ignore
-      fields: [
-        {
-          type: "string",
-          label: "Primary Color",
-          name: "color",
-          ui: {
-            component: ColorPickerInput,
-          },
-        },
-        {
-          type: "string",
-          name: "font",
-          label: "Font Family",
-          options: [
-            {
-              label: "System Sans",
-              value: "sans",
+              label: "Platform",
+              name: "platform",
+              options: ["Instagram", "Facebook", "Twitter", "YouTube"],
             },
             {
-              label: "Nunito",
-              value: "nunito",
-            },
-            {
-              label: "Lato",
-              value: "lato",
-            },
-          ],
-        },
-        {
-          type: "string",
-          name: "darkMode",
-          label: "Dark Mode",
-          options: [
-            {
-              label: "System",
-              value: "system",
-            },
-            {
-              label: "Light",
-              value: "light",
-            },
-            {
-              label: "Dark",
-              value: "dark",
+              type: "string",
+              label: "Link",
+              name: "link",
             },
           ],
         },
@@ -144,4 +127,93 @@ const Global: Collection = {
   ],
 };
 
-export default Global;
+export const Theme: Collection = {
+  label: "Theme",
+  name: "theme",
+  path: "content/global",
+  ui: {
+    global: true,
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+  },
+  fields: [
+    {
+      type: "string",
+      label: "Primary Color",
+      name: "primaryColor",
+      ui: {
+        component: "color",
+      },
+    },
+    {
+      type: "string",
+      label: "Background Color",
+      name: "backgroundColor",
+      ui: {
+        component: "color",
+      },
+    },
+    {
+      type: "string",
+      label: "Off-Black Color (Cards/Inputs)",
+      name: "offBlackColor",
+      ui: {
+        component: "color",
+      },
+    },
+    {
+      type: "string",
+      label: "Text White Color",
+      name: "textWhiteColor",
+      ui: {
+        component: "color",
+      },
+    },
+    {
+      type: "string",
+      label: "Text Gray Color",
+      name: "textGrayColor",
+      ui: {
+        component: "color",
+      },
+    },
+    {
+      type: "string",
+      label: "Success/Win Color",
+      name: "successColor",
+      ui: {
+        component: "color",
+      },
+    },
+    {
+      type: "string",
+      label: "Error/Loss Color",
+      name: "errorColor",
+      ui: {
+        component: "color",
+      },
+    },
+    {
+      type: "string",
+      name: "font",
+      label: "Font Family",
+      options: [
+        { label: "System Sans", value: "sans" },
+        { label: "Nunito", value: "nunito" },
+        { label: "Lato", value: "lato" },
+      ],
+    },
+    {
+      type: "string",
+      name: "darkMode",
+      label: "Dark Mode",
+      options: [
+        { label: "System", value: "system" },
+        { label: "Light", value: "light" },
+        { label: "Dark", value: "dark" },
+      ],
+    },
+  ],
+};
