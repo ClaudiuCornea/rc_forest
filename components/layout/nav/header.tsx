@@ -15,7 +15,6 @@ const LOCALES = [
   { code: "nl", label: "NL" },
 ];
 
-// ✅ Fixed: extracted hook so it can be used in both desktop and mobile menus
 function useLanguageSwitcher() {
   const { locale } = useLayout();
   const pathname = usePathname();
@@ -40,7 +39,7 @@ interface LanguageSwitcherProps {
   mobile?: boolean;
 }
 
-const LanguageSwitcher = ({ onSelect, mobile = false }: LanguageSwitcherProps) => {
+const LanguageSwitcher = React.memo(({ onSelect, mobile = false }: LanguageSwitcherProps) => {
   const { locale, handleLanguageChange } = useLanguageSwitcher();
 
   if (mobile) {
@@ -88,9 +87,11 @@ const LanguageSwitcher = ({ onSelect, mobile = false }: LanguageSwitcherProps) =
       ))}
     </div>
   );
-};
+});
 
-export const Header = () => {
+LanguageSwitcher.displayName = "LanguageSwitcher";
+
+export const Header = React.memo(() => {
   const { globalSettings, locale } = useLayout();
   const header = globalSettings!.header!;
   const [menuState, setMenuState] = React.useState(false);
@@ -117,7 +118,6 @@ export const Header = () => {
   };
 
   const nameParts = header.name?.split(' ') || [];
-  // ✅ Kept as-is but noted in schema fix — ideally add `logo` to Tina schema
   const logoSrc = (header as any).logo || "/uploads/logo.webp";
 
   return (
@@ -183,7 +183,6 @@ export const Header = () => {
               </Link>
             )}
 
-            {/* ✅ Desktop language switcher */}
             <LanguageSwitcher />
           </div>
 
@@ -245,7 +244,6 @@ export const Header = () => {
 
               <div className="w-12 h-0.5 bg-club-red/30"></div>
 
-              {/* ✅ Fixed: Mobile language switcher now uses the shared component with proper scope */}
               <LanguageSwitcher mobile onSelect={() => setMenuState(false)} />
             </div>
           </div>
@@ -253,4 +251,6 @@ export const Header = () => {
       </nav>
     </header>
   );
-};
+});
+
+Header.displayName = "Header";

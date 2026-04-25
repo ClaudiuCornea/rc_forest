@@ -4,7 +4,7 @@ import { useLayout } from "../layout-context";
 import { tinaField } from "tinacms/dist/react";
 import { Instagram, Facebook, Twitter, Youtube } from "lucide-react";
 
-const SocialIcon = ({ platform, className }: { platform: string; className?: string }) => {
+const SocialIcon = React.memo(({ platform, className }: { platform: string; className?: string }) => {
   switch (platform) {
     case "Instagram": return <Instagram className={className} />;
     case "Facebook": return <Facebook className={className} />;
@@ -12,14 +12,14 @@ const SocialIcon = ({ platform, className }: { platform: string; className?: str
     case "YouTube": return <Youtube className={className} />;
     default: return null;
   }
-};
+});
 
-export const Footer = () => {
+SocialIcon.displayName = "SocialIcon";
+
+export const Footer = React.memo(() => {
   const { globalSettings } = useLayout();
   const { header, footer } = globalSettings!;
 
-  // ✅ Fixed: always derive the end year from JS Date — don't rely on the CMS field
-  // which was present in en/index.json but missing from fr and nl versions.
   const currentYear = new Date().getFullYear();
   const startYear = footer?.copyrightStartYear ?? currentYear.toString();
 
@@ -83,7 +83,6 @@ export const Footer = () => {
               Status
             </strong>
             <div className="space-y-1">
-              {/* ✅ Fixed: always uses JS-derived current year, not the CMS field */}
               <p className="text-xs text-club-gray">
                 © {startYear} – {currentYear} {header?.name}.
               </p>
@@ -101,4 +100,6 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";
