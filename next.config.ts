@@ -7,17 +7,14 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'assets.tina.io',
-        port: '',
       },
       {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
-        port: '',
       },
       {
         protocol: 'https',
         hostname: 'placehold.co',
-        port: '',
       },
     ],
   },

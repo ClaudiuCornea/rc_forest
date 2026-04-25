@@ -44,6 +44,11 @@ export async function generateMetadata({
         nl: "/nl",
       },
     },
+    icons: {
+      icon: "/uploads/logo.webp",
+      shortcut: "/uploads/logo.webp",
+      apple: "/uploads/logo.webp",
+    },
     openGraph: {
       type: "website",
       locale: locale,
