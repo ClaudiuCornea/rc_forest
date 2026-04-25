@@ -1,11 +1,8 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // Removed output: 'export' to support Server Actions (Contact Form)
   images: {
-    // ✅ Required for static export — image optimization is not available
-    unoptimized: true,
-    // ✅ Removed: `formats` and `minimumCacheTTL` have no effect when unoptimized: true
     remotePatterns: [
       {
         protocol: 'https',
