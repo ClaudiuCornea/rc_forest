@@ -2,6 +2,11 @@
   "name": "test-app",
   "version": "0.0.1",
   "private": true,
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
   "scripts": {
     "dev": "tinacms dev -c \"next dev --turbopack\"",
     "build": "tinacms build && next build",
@@ -17,7 +22,6 @@
     "@types/node": "^22.19.17",
     "@types/nodemailer": "^8.0.0",
     "@types/react": "^18.3.28",
-    "babel-plugin-react-compiler": "^1.0.0",
     "postcss": "^8.5.10",
     "typescript": "^5.9.3"
   },

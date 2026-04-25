@@ -72,9 +72,6 @@ importers:
       '@types/react':
         specifier: ^18.3.28
         version: 18.3.28
-      babel-plugin-react-compiler:
-        specifier: ^1.0.0
-        version: 1.0.0
       postcss:
         specifier: ^8.5.10
         version: 8.5.10
@@ -7229,6 +7226,7 @@ snapshots:
   babel-plugin-react-compiler@1.0.0:
     dependencies:
       '@babel/types': 7.29.0
+    optional: true
 
   bail@2.0.2: {}
 
