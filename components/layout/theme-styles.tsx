@@ -38,7 +38,7 @@ export const ThemeStyles = ({ theme }: { theme?: Theme | null }) => {
       --error-color-rgb: ${hexToRgb(errorColor)};
     }
 
-    /* CRITICAL CSS: Prevent flash of unstyled content & delay of paint */
+    /* CRITICAL CSS: Integrated to eliminate render-blocking delay for LCP */
     body { 
       background-color: ${backgroundColor} !important; 
       color: ${textWhiteColor} !important;
@@ -46,11 +46,24 @@ export const ThemeStyles = ({ theme }: { theme?: Theme | null }) => {
       padding: 0;
       font-family: var(--font-barlow), ui-sans-serif, system-ui;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     
-    /* Ensure hero background colors are available immediately */
-    #contact, section { background-color: ${backgroundColor}; }
-    .bg-club-black { background-color: ${backgroundColor} !important; }
+    /* Ensure hero background & layout are available immediately */
+    #contact, section, .bg-club-black { background-color: ${backgroundColor} !important; }
+    
+    .stripe-bg { 
+      background-image: repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(${hexToRgb(primaryColor)},0.03) 40px,rgba(${hexToRgb(primaryColor)},0.03) 41px); 
+    }
+
+    /* Prevent LCP layout shift for Hero */
+    .hero-min-height { min-height: 100vh; min-height: 100dvh; }
+    
+    @keyframes float-y { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    .animate-float { animation: float-y 4s ease-in-out infinite; will-change: transform; }
+
+    /* Hide content before hydration only if it requires JS animations */
+    .reveal-init { opacity: 0; transform: translateY(24px); }
   `;
 
   return (

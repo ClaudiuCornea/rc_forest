@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { tinaField } from "tinacms/dist/react";
 import { PageBlocksHero } from '../../tina/__generated__/types';
-import { Reveal } from '../reveal';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 
@@ -17,7 +16,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
   
   return (
     <>
-      <section className="h-[100dvh] pt-20 relative overflow-hidden stripe-bg flex flex-col">
+      <section className="hero-min-height h-[100dvh] pt-20 relative overflow-hidden stripe-bg flex flex-col">
         {data.year && (
           <span className="absolute right-[-2%] bottom-0 font-display ghost-text text-white/5" data-tina-field={tinaField(data, 'year')}>
             {data.year}
@@ -30,7 +29,8 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
             <div className="flex flex-col md:grid md:grid-cols-[1.2fr_0.8fr] gap-8 sm:gap-12 md:gap-20 lg:gap-24 items-center">
               
               {/* Image Column (30% Support - First on mobile, Right on tablet/desktop) */}
-              <Reveal className={cn("order-1 md:order-2 w-full", !mounted && "opacity-0")}>
+              {/* ✅ Removed Reveal for critical LCP element */}
+              <div className={cn("order-1 md:order-2 w-full transition-opacity duration-700", !mounted ? "opacity-0" : "opacity-100")}>
                 <div className="flex items-center justify-center md:justify-end py-2 md:py-0 relative z-20">
                   <div className="logo-glow relative w-[35vw] sm:w-[40vw] md:w-[25vw] lg:w-full max-w-[180px] sm:max-w-[240px] md:max-w-[300px] lg:max-w-[420px] aspect-square">
                     {data.logoImage ? (
@@ -55,10 +55,11 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
                     )}
                   </div>
                 </div>
-              </Reveal>
+              </div>
 
               {/* Content Column (60% Authority - Second on mobile, Left on tablet/desktop) */}
-              <Reveal className={cn("order-2 md:order-1 w-full", !mounted && "opacity-0")}>
+              {/* ✅ Removed Reveal for critical LCP text */}
+              <div className={cn("order-2 md:order-1 w-full transition-all duration-700", !mounted ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0")}>
                 <div className="flex flex-col justify-center text-center md:text-left pt-2 md:pt-0">
                   <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 mb-2 sm:mb-4 md:mb-6">
                     <span className="block w-6 h-0.5 bg-club-red"></span>
@@ -113,7 +114,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
                       })}
                   </div>
                 </div>
-              </Reveal>
+              </div>
 
             </div>
           </div>
