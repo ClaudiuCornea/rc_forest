@@ -41,7 +41,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
                         fill
                         priority
                         fetchPriority="high"
-                        sizes="(max-width: 768px) 40vw, 420px"
+                        sizes="(max-width: 640px) 180px, (max-width: 768px) 240px, (max-width: 1024px) 300px, 420px"
                         data-tina-field={tinaField(data, 'logoImage')}
                       />
                     ) : (

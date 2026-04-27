@@ -140,8 +140,9 @@ export const Header = React.memo(() => {
               <Image
                 src={logoSrc}
                 alt="Logo"
-                fill
-                className="object-contain"
+                width={40}
+                height={40}
+                className="object-contain w-full h-full"
                 data-tina-field={tinaField(header, 'logo' as any)}
               />
             </div>
@@ -204,7 +205,7 @@ export const Header = React.memo(() => {
             <div className="flex-1 flex flex-col items-center justify-center p-8 space-y-10 pt-24">
               <div className="flex flex-col items-center gap-4 mb-4">
                 <div className="relative w-16 h-16">
-                  <Image src={logoSrc} alt="Logo" fill className="object-contain" />
+                  <Image src={logoSrc} alt="Logo" width={64} height={64} className="object-contain w-full h-full" />
                 </div>
                 <span className="font-display text-2xl tracking-[0.25rem] text-white">
                   {nameParts[0]} <span className="text-club-red">-</span> {nameParts[1]}
